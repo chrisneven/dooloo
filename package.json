@@ -1,0 +1,46 @@
+{
+    "name": "dooloo-nextjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start",
+        "typecheck": "tsc --project . --noEmit"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "next": "^9.1.2",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.5",
+        "@types/react": "^16.9.11",
+        "check-dependencies": "^1.1.0",
+        "husky": "^3.0.9",
+        "lint-staged": "^9.4.2",
+        "oberon-prettier-config": "^1.0.0",
+        "prettier": "^1.18.2",
+        "tslint": "^6.0.0-beta0",
+        "tslint-config-oberon": "^1.2.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.6.4"
+    },
+    "lint-staged": {
+        "*.ts?(x)": [
+            "tslint --fix",
+            "npm run test --if-present -- --findRelatedTests",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run typecheck && lint-staged"
+        }
+    },
+    "prettier": "oberon-prettier-config"
+}

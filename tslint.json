@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "tslint-config-oberon",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "interface-name": false,
+        "no-empty-interface": false,
+        "import-blacklist": [
+            true,
+            "styled-components",
+            "<-- use styled-components/macro instead"
+        ]
+    },
+    "linterOptions": {
+        "exclude": [
+            "src/typings/styled-components.d.ts",
+            "src/generated/graphql.tsx"
+        ]
+    }
+}
