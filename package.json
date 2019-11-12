@@ -16,19 +16,24 @@
     "dependencies": {
         "@apollo/react-hooks": "^3.1.3",
         "@apollo/react-ssr": "^3.1.3",
+        "@babel/core": "^7.7.2",
         "apollo-boost": "^0.4.4",
         "dotenv": "^8.2.0",
         "dotenv-webpack": "^1.7.0",
         "graphql": "^14.5.8",
         "modern-normalize": "^0.5.0",
-        "next": "^9.1.2",
+        "next": "^9.1.3",
         "next-apollo": "^3.1.6",
         "normalize.css": "^8.0.1",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
+        "react-spring": "^8.0.27",
+        "react-use-scroll-position": "^2.0.0",
+        "react-waypoint": "^9.0.2",
         "styled-components": "^4.4.1"
     },
     "devDependencies": {
+        "@babel/plugin-syntax-optional-chaining": "^7.2.0",
         "@graphql-codegen/add": "^1.8.3",
         "@graphql-codegen/cli": "^1.8.3",
         "@graphql-codegen/introspection": "^1.8.3",
@@ -38,16 +43,19 @@
         "@graphql-codegen/typescript-react-apollo": "^1.8.3",
         "@types/node": "^12.12.5",
         "@types/react": "^16.9.11",
-        "@types/styled-components": "^4.1.20",
+        "@types/reflexbox": "^4.0.0",
+        "@types/styled-components": "^4.4.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
         "check-dependencies": "^1.1.0",
         "husky": "^3.0.9",
         "lint-staged": "^9.4.2",
         "oberon-prettier-config": "^1.0.0",
-        "prettier": "^1.18.2",
+        "prettier": "^1.19.1",
+        "reflexbox": "^4.0.6",
         "tslint": "^6.0.0-beta0",
         "tslint-config-oberon": "^1.2.0",
         "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.6.4"
+        "typescript": "^3.7.2"
     },
     "lint-staged": {
         "*.ts?(x)": [

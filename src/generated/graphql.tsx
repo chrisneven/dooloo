@@ -929,7 +929,7 @@ export type StoriesQueryVariables = {};
 
 export type StoriesQuery = (
   { __typename?: 'query_root' }
-  & { story: Array<(
+  & { stories: Array<(
     { __typename?: 'story' }
     & Pick<Story, 'title' | 'text'>
   )> }
@@ -938,7 +938,7 @@ export type StoriesQuery = (
 
 export const StoriesDocument = gql`
     query Stories {
-  story {
+  stories: story {
     title
     text
   }

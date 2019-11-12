@@ -1,16 +1,17 @@
 import gql from 'graphql-tag';
 import { NextPage } from 'next';
-import Link from 'next/link';
 import React from 'react';
+import { Flex } from 'reflexbox';
 import styled from 'styled-components';
+import Logo from '../components/atoms/svg/Logo';
+import StoryTell from '../components/organisms/StoryTell';
 import { useStoriesQuery } from '../generated/graphql';
 import { withApollo } from '../libs/apollo';
 
 export const query = gql`
     query Stories {
-        story {
+        stories: story {
             title
-
             text
         }
     }
@@ -19,16 +20,26 @@ export const query = gql`
 const Home: NextPage<{ userAgent?: string }> = ({ userAgent }) => {
     const { data } = useStoriesQuery();
 
+    if (!data) {
+        return null;
+    }
+    const exampleStory = data.stories[0];
+
     return (
-        <Container>
-            <h1>
-                Hello world! - user agent: {userAgent}
-                <Link href={'/about'}>
-                    <a>Go to about-us</a>
-                </Link>
-            </h1>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
-        </Container>
+        <Flex>
+            <Container>
+                <Navigation>
+                    <Logo />
+                    <button>Make a story</button>
+                </Navigation>
+
+                <h1>Your story creating tool</h1>
+                <ul>{data && data.stories.map(({ title }) => <li key={title}>{title}</li>)}</ul>
+                <h2>Example story:</h2>
+
+                {exampleStory && <StoryTell story={exampleStory} />}
+            </Container>
+        </Flex>
     );
 };
 
@@ -39,6 +50,17 @@ Home.getInitialProps = async ({ req }) => {
 
 export default withApollo(Home);
 
+const Navigation = styled.nav`
+    display: flex;
+    align-items: auto;
+    justify-content: space-between;
+    :first-child {
+        margin-right: auto;
+    }
+`;
+
 const Container = styled.div`
-    background: ${({ theme }) => theme.colors.primary.dark};
+    width: ${({ theme }) => theme.widths.xl}px;
+    margin: 0 auto;
+    /* background: ${({ theme }) => theme.colors.primary.dark}; */
 `;

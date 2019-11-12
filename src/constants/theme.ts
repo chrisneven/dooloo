@@ -1,7 +1,7 @@
 export default {
     colors: {
         primary: {
-            default: '#00FF75',
+            default: '#4EDC89',
             dark: '#027135',
         },
         desaturated: {
@@ -16,5 +16,17 @@ export default {
             default: '#D72200',
             dark: '#A50C00',
         },
+    },
+    breakpoints: {
+        xs: 0,
+        sm: 576,
+        md: 768,
+        lg: 992,
+        xl: 1200,
+    },
+    widths: {
+        md: 720,
+        lg: 960,
+        xl: 1140,
     },
 };
