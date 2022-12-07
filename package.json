@@ -35,7 +35,7 @@
     "devDependencies": {
         "@babel/plugin-syntax-optional-chaining": "^7.2.0",
         "@graphql-codegen/add": "^1.8.3",
-        "@graphql-codegen/cli": "^1.8.3",
+        "@graphql-codegen/cli": "^1.21.8",
         "@graphql-codegen/introspection": "^1.8.3",
         "@graphql-codegen/schema-ast": "^1.8.3",
         "@graphql-codegen/typescript": "^1.8.3",
